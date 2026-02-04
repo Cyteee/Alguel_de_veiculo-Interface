@@ -1,11 +1,12 @@
 package model.entities;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class AluguelDeCarro {
 
-    private Date comeco;
-    private Date fim;
+    private LocalDateTime comeco;
+    private LocalDateTime fim;
 
     private Veiculo veiculo;
     private Fatura fatura;
@@ -13,25 +14,25 @@ public class AluguelDeCarro {
     public AluguelDeCarro() {
     }
 
-    public AluguelDeCarro(Date comeco, Date fim, Veiculo veiculo) {
+    public AluguelDeCarro(LocalDateTime comeco, LocalDateTime fim, Veiculo veiculo) {
         this.comeco = comeco;
         this.fim = fim;
         this.veiculo = veiculo;
     }
 
-    public Date getComeco() {
+    public LocalDateTime getComeco() {
         return comeco;
     }
 
-    public void setComeco(Date comeco) {
+    public void setComeco(LocalDateTime comeco) {
         this.comeco = comeco;
     }
 
-    public Date getFim() {
+    public LocalDateTime getFim() {
         return fim;
     }
 
-    public void setFim(Date fim) {
+    public void setFim(LocalDateTime fim) {
         this.fim = fim;
     }
 

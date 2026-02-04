@@ -1,5 +1,7 @@
 import model.entities.AluguelDeCarro;
 import model.entities.Veiculo;
+import model.entities.services.ServicoDeAluguel;
+import model.entities.services.ServicoDeImpostoBrasil;
 
 void main() {
     Locale.setDefault(Locale.US);
@@ -17,7 +19,19 @@ void main() {
 
     AluguelDeCarro ac = new AluguelDeCarro(comeco, fim, new Veiculo(modeloDoCarro));
 
+    System.out.print("Entre com o preco por hora: ");
+    double precoPorHora = sc.nextDouble();
+    System.out.print("Entre com o preco por dia: ");
+    double precoPorDia = sc.nextDouble();
 
+    ServicoDeAluguel sa = new ServicoDeAluguel(precoPorHora, precoPorDia, new ServicoDeImpostoBrasil());
+
+    ServicoDeAluguel.processFatura(ac);
+
+    System.out.println("Fatura: ");
+    System.out.print("Pagamento basico: " + ac.getFatura().getPagamentoBasico());
+    System.out.print("Imposto: " + ac.getFatura().getImposto());
+    System.out.print("Pagamento total: " + ac.getFatura().getPagamentoTota());
 
     sc.close();
 }
