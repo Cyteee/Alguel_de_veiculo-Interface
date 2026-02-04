@@ -18,10 +18,13 @@ public class ServicoDeAluguel {
         ServicoDeImposto = servicoDeImposto;
     }
 
+    public static void processFatura(AluguelDeCarro ac) {
+    }
+
     public void processamentoDaFatura(AluguelDeCarro AluguelDeCarro){
 
         double minutos = Duration.between(AluguelDeCarro.getComeco(), AluguelDeCarro.getFim()).toMinutes();
-        double horas = minutes / 60.0;
+        double horas = minutos / 60.0;
 
         double pagamentoBasico;
         if (horas <= 12.0){
